@@ -24,8 +24,13 @@ public class BookController {
         List<Book> Books = bookRepository.findAll();
         List<Book> recommendedBooks = bookRepository.findAll(PageRequest.of(0, 5)).getContent();
 
-        System.out.println("Fetched books: " + Books);
-        System.out.println("Fetched recommended books: " + recommendedBooks);
+        // Print out the books in recommendedBooks
+        for (Book book : recommendedBooks) {
+            System.out.println("Book ID: " + book.getId());
+            System.out.println("Book Name: " + book.getBookName());
+            System.out.println("Author: " + book.getAuthor().getAuthorName());
+            System.out.println("-------------------------------");
+        }
 
         model.addAttribute("books", Books);
         model.addAttribute("recommendedBooks", recommendedBooks);
@@ -33,3 +38,5 @@ public class BookController {
         return "index";
     }
 }
+
+

@@ -1,35 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>JKroul's Bookstore</title>
-  <!-- existing CSS here -->
+  <title>Book Store</title>
 </head>
 <body>
-<div class="header">
-  <h1>Welcome to JKroul's Bookstore</h1>
+<h1>Book List</h1>
+<div th:each="book : ${books}">
+  <p th:text="${book.title}"></p>
 </div>
-<div class="recommended-Books">
-  <h2>Books for You</h2>
-  <div class="book-list" th:each="book : ${recommendedBooks}">
-    <div class="book-item">
-      <h3 th:text="${book.getBookName}">Book Title</h3>
-      <p th:text="'Author: ' + ${book.author.getAuthor}">Author</p>
-      <p th:text="'Genre: ' + ${book.genre}">Genre</p>
-      <p th:text="'Price: ' + ${book.price}">Price</p>
-    </div>
-  </div>
-</div>
-<div class="all-Books">
-  <h2>All Books</h2>
-  <div class="book-list" th:each="book : ${Books}">
-    <div class="book-item">
-      <h3 th:text="${book.bookName}">Book Title</h3>
-      <p th:text="'Author: ' + ${book.author.authorName}">Author: Author Name</p>
-      <p th:text="'Genre: ' + ${book.genre}">Genre: Genre</p>
-      <p th:text="'Price: ' + ${book.price}">Price: Price</p>
-    </div>
-  </div>
+<h1>Recommended Books</h1>
+<div th:each="book : ${recommendedBooks}">
+  <p th:text="${book.title}"></p>
 </div>
 </body>
 </html>
