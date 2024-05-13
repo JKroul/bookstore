@@ -1,8 +1,7 @@
 package jkroul.bookstore.controllers;
 
-import jkroul.bookstore.entities.book;
+import jkroul.bookstore.entities.Book;
 
-import jkroul.bookstore.entities.book;
 import jkroul.bookstore.repositories.BookRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -22,13 +21,13 @@ public class BookController {
 
     @GetMapping("index")
     public String listBooks(Model model) {
-        List<book> books = bookRepository.findAll();
-        List<book> recommendedBooks = bookRepository.findAll(PageRequest.of(0, 5)).getContent();
+        List<Book> Books = bookRepository.findAll();
+        List<Book> recommendedBooks = bookRepository.findAll(PageRequest.of(0, 5)).getContent();
 
-        System.out.println("Fetched books: " + books);
+        System.out.println("Fetched books: " + Books);
         System.out.println("Fetched recommended books: " + recommendedBooks);
 
-        model.addAttribute("books", books);
+        model.addAttribute("books", Books);
         model.addAttribute("recommendedBooks", recommendedBooks);
 
         return "index";

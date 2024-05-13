@@ -3,7 +3,7 @@ package jkroul.bookstore.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class book {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,13 +18,13 @@ public class book {
     private String genre;
 
     @ManyToOne
-    private author author;
+    private Author author;
 
 
-    public book() {
+    public Book() {
     }
 
-    public book(String bookName, author author) {
+    public Book(String bookName, Author author) {
         this.book_name = bookName;
         this.author = author;
     }
@@ -37,7 +37,15 @@ public class book {
         return book_name;
     }
 
-    public author getAuthor() {
+    public Author getAuthor() {
         return author;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public String getGenre() {
+        return genre;
     }
 }

@@ -9,7 +9,7 @@
 <div class="header">
   <h1>Welcome to JKroul's Bookstore</h1>
 </div>
-<div class="recommended-books">
+<div class="recommended-Books">
   <h2>Books for You</h2>
   <div class="book-list" th:each="book : ${recommendedBooks}">
     <div class="book-item">
@@ -20,9 +20,9 @@
     </div>
   </div>
 </div>
-<div class="all-books">
+<div class="all-Books">
   <h2>All Books</h2>
-  <div class="book-list" th:each="book : ${books}">
+  <div class="book-list" th:each="book : ${Books}">
     <div class="book-item">
       <h3 th:text="${book.bookName}">Book Title</h3>
       <p th:text="'Author: ' + ${book.author.authorName}">Author: Author Name</p>

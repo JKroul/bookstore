@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class author {
+public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +14,12 @@ public class author {
     private String authorName;
 
     @OneToMany(mappedBy = "author")
-    private List<book> books;
+    private List<Book> Books;
 
-    public author() {
+    public Author() {
     }
 
-    public author(String authorName) {
+    public Author(String authorName) {
         this.authorName = authorName;
     }
 
@@ -31,7 +31,7 @@ public class author {
         return authorName;
     }
 
-    public List<book> getBooks() {
-        return books;
+    public List<Book> getBooks() {
+        return Books;
     }
 }

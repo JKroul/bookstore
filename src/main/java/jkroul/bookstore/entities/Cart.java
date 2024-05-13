@@ -16,5 +16,22 @@ public class Cart {
     @ManyToMany
     private List<Book> books;
 
-    // getters and setters
+    public Cart() {
+    }
+
+    public Cart(User user) {
+        this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
 }

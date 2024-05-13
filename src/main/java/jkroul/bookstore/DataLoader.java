@@ -1,12 +1,9 @@
 package jkroul.bookstore;
 
-import jkroul.bookstore.entities.author;
-import jkroul.bookstore.entities.book;
 import jkroul.bookstore.repositories.AuthorRepository;
 import jkroul.bookstore.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class DataLoader implements CommandLineRunner {
