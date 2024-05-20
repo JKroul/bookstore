@@ -8,8 +8,8 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column
-    private String book_name;
+    @Column(name = "book_name")
+    private String bookName;
 
     @Column
     private long price;
@@ -25,7 +25,7 @@ public class Book {
     }
 
     public Book(String bookName, Author author) {
-        this.book_name = bookName;
+        this.bookName = bookName;
         this.author = author;
     }
 
@@ -34,7 +34,7 @@ public class Book {
     }
 
     public String getBookName() {
-        return book_name;
+        return bookName;
     }
 
     public Author getAuthor() {

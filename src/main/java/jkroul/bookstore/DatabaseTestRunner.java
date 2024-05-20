@@ -1,4 +1,4 @@
-package jkroul.bookstore;
+/*package jkroul.bookstore;
 
 import jkroul.bookstore.entities.Book;
 import jkroul.bookstore.repositories.BookRepository;
@@ -20,10 +20,10 @@ public class DatabaseTestRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<Book> Books = bookRepository.findAll();
         for (Book book : Books) {
-            System.out.println("Boo<k ID: " + book.getId());
+            System.out.println("Book ID: " + book.getId());
             System.out.println("Book Name: " + book.getBookName());
             System.out.println("Author: " + book.getAuthor().getAuthorName());
             System.out.println("-------------------------------");
         }
     }
-}
+}*/

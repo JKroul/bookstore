@@ -10,7 +10,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(name = "author_name")
     private String authorName;
 
     @OneToMany(mappedBy = "author")

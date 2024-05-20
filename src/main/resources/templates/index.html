@@ -4,13 +4,14 @@
   <title>Book Store</title>
 </head>
 <body>
-<h1>Book List</h1>
+<h1>Book List - Test</h1>
 <div th:each="book : ${books}">
-  <p th:text="${book.title}"></p>
-</div>
+  <p th:text="${book.bookName}"></p>
+  </div>
 <h1>Recommended Books</h1>
 <div th:each="book : ${recommendedBooks}">
-  <p th:text="${book.title}"></p>
-</div>
+  <p th:text="${book.bookName}"></p>
+
+  </div>
 </body>
 </html>
