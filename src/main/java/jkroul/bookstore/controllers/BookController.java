@@ -1,7 +1,6 @@
 package jkroul.bookstore.controllers;
 
 import jkroul.bookstore.entities.Book;
-
 import jkroul.bookstore.repositories.BookRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;

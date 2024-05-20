@@ -1,9 +1,9 @@
 package jkroul.bookstore.entities;
 
 import jakarta.persistence.*;
-import java.awt.print.Book;
+import jkroul.bookstore.entities.Book;
 import java.util.List;
-/*
+
 @Entity
 public class Cart {
     @Id
@@ -11,13 +11,17 @@ public class Cart {
     private Long id;
 
     @OneToMany
-    private List<Book> books;
+    private List<Book> booksInCart;
+
+    @ManyToOne
+    private User user;
 
     public Cart() {
     }
 
-    public Cart(List<Book> books) {
-        this.books = books;
+    public Cart(List<Book> books, User user) {
+        this.booksInCart = books;
+        this.user = user;
     }
 
     public Long getId() {
@@ -25,6 +29,22 @@ public class Cart {
     }
 
     public List<Book> getBooks() {
-        return books;
+        return booksInCart;
     }
-}*/
+    
+    public void addBook(Book book) {
+        this.booksInCart.add(book);
+    }
+    
+    public void removeBook(Book book) {
+        this.booksInCart.remove(book);
+    }
+
+    public void purchaseBooks() {
+        for (Book book : booksInCart) {
+            user.subtractBalance(book.getPrice());
+            user.addPoints(book.getPrice()/10);
+        }
+        booksInCart.clear();
+    }
+}

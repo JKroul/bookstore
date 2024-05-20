@@ -24,9 +24,11 @@ public class Book {
     public Book() {
     }
 
-    public Book(String bookName, Author author) {
+    public Book(String bookName, Author author, long price, String genre) {
         this.bookName = bookName;
         this.author = author;
+        this.price = price;
+        this.genre = genre;
     }
 
     public long getId() {
