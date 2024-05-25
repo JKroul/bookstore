@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+<h1>Your books</h1>
+<div th:each="cart :${booksInCart}">
+
+<p th:intiger="${cart.cartCost}"></p>
+
+</body>
+</html>

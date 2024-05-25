@@ -13,7 +13,7 @@ public class Cart {
     @OneToMany
     private List<Book> booksInCart;
 
-    @ManyToOne
+    @OneToOne
     private User user;
 
     public Cart() {
@@ -46,5 +46,13 @@ public class Cart {
             user.addPoints(book.getPrice()/10);
         }
         booksInCart.clear();
+    }
+
+    public int cartCost() {
+        int cost = 0;
+        for (Book book : booksInCart) {
+            cost += book.getPrice();
+        }
+        return cost;
     }
 }
