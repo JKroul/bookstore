@@ -6,9 +6,13 @@
 </head>
 <body>
 <h1>Your books</h1>
-<div th:each="cart :${booksInCart}">
-
-<p th:intiger="${cart.cartCost}"></p>
-
+<div th:each="book :${booksInCart}">
+    <p th:text="${book.bookName}"></p>
+    <p th:text="${book.author}"></p>
+    <p th:text="${book.price}"></p>
+    </div>
+<div>
+    <h2>Total price: <span th:text="${cartCost}"></span></h2>
+</div>
 </body>
 </html>

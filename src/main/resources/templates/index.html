@@ -2,16 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Book Store</title>
+  <script>
+    function addToCart(bookId) {
+      Cart.addBook(bookId);
+    }
+  </script>
 </head>
 <body>
 <h1>Book List - Test</h1>
 <div th:each="book : ${books}">
   <p th:text="${book.bookName}"></p>
-  </div>
+  <p th:text="${book.author}"></p>
+  <p th:text="${book.price}"></p>
+  <p th:text="${book.genre}"></p>
+  <button th:onclick="'javascript:addToCart(\'' + ${book.id} + '\');'">Add to Cart</button>
+</div>
 <h1>Recommended Books</h1>
 <div th:each="book : ${recommendedBooks}">
   <p th:text="${book.bookName}"></p>
-
-  </div>
+</div>
+<div>
+  <a href="/checkout">Checkout</a>
+</div>
 </body>
 </html>

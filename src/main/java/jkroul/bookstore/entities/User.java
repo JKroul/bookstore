@@ -23,7 +23,8 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, long balance, long points) {
+    public User(Long Id, String username, String password, long balance, long points) {
+        this.id = Id;
         this.username = username;
         this.password = password;
         this.balance = balance;
