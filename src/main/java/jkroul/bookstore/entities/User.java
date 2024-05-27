@@ -24,15 +24,19 @@ public class User {
 @OneToOne(mappedBy = "user")
 private Cart cart;
 
+    public User() {
+    }
+
     public User(String username) {
     }
 
-    public User(Long Id, String username, String password, long balance, long points) {
+    public User(Long Id, String username, String password, long balance, long points, Cart cart) {
         this.id = Id;
         this.username = username;
         this.password = password;
         this.balance = balance;
         this.points = points;
+        this.cart = cart;
     }
 
     public Long getId() {
@@ -69,6 +73,10 @@ private Cart cart;
 
     public void subtractPoints (long amount) {
         this.points = this.points - amount;
+    }
+
+    public Cart getCart() {
+        return cart;
     }
 
     public void createUser (String username, String password) {

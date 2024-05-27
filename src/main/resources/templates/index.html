@@ -12,10 +12,8 @@
 <h1>Book List - Test</h1>
 <div th:each="book : ${books}">
   <p th:text="${book.bookName}"></p>
-  <p th:text="${book.author}"></p>
   <p th:text="${book.price}"></p>
   <p th:text="${book.genre}"></p>
-  <button th:onclick="Cart.addBook(\'' + ${book.id} + '\');'">Add to Cart</button>
 </div>
 <h1>Recommended Books</h1>
 <div th:each="book : ${recommendedBooks}">

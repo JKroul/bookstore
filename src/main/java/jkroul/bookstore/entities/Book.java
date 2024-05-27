@@ -20,6 +20,8 @@ public class Book {
     @ManyToOne
     private Author author;
 
+    public Book() {
+    }
 
     public Book(String bookName, Author author, long price, String genre) {
         this.bookName = bookName;

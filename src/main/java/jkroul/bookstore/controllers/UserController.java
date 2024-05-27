@@ -21,12 +21,11 @@ public class UserController {
         Optional<User> userOptional = userRepository.findById(Long.valueOf(1));
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            // Assuming getUsername() method exists in User class
+            model.addAttribute("user", user);
             model.addAttribute("userName", user.getUsername());
             model.addAttribute("balance", user.getBalance());
             model.addAttribute("points", user.getPoints());
         }
-
         return "userpage";
     }
 }

@@ -13,7 +13,7 @@ public class Cart {
     @OneToMany
     private List<Book> booksInCart;
 
-    @OneToOne (mappedBy = "user")
+    @OneToOne
     private User user;
 
     @Column
