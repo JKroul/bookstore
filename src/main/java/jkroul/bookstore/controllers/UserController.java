@@ -23,6 +23,8 @@ public class UserController {
             User user = userOptional.get();
             // Assuming getUsername() method exists in User class
             model.addAttribute("userName", user.getUsername());
+            model.addAttribute("balance", user.getBalance());
+            model.addAttribute("points", user.getPoints());
         }
 
         return "userpage";

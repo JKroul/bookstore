@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Userpage</title>
+</head>
+<body>
+<h1>Your Userpage</h1>
+<div>
+    <h2>Your info</h2>
+    <p th:text="${userName}"></p>
+    <p th:text="${points}"></p>
+
+    <h2>Your ballance</h2>
+    <p th:text="${ballance}"></p>
+    <form action="/addMoney" method="post">
+        <input type="number" name="money">
+        <input type="submit" value="Add money">
+</form>
+</div>
+
+</body>
+</html>
