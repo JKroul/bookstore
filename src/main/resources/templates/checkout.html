@@ -13,7 +13,7 @@
     </div>
 <div>
     <h2>Total price: <span th:text="${totalPrice}"></span></h2>
-    <button onclick="Cart.purchaseBooks()">Buy</button>
+    <button th:onclick="Cart.purchaseBooks()">Buy</button>
     <a href="/">Back to Book Store</a>
 </div>
 </body>

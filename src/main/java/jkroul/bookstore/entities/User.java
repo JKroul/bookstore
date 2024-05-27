@@ -1,9 +1,6 @@
 package jkroul.bookstore.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -12,15 +9,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+@Column
     private String username;
 
+@Column
     private String password;
 
+@Column
     private long balance;
 
+@Column
     private long points;
 
-    public User() {
+@OneToOne(mappedBy = "user")
+private Cart cart;
+
+    public User(String username) {
     }
 
     public User(Long Id, String username, String password, long balance, long points) {

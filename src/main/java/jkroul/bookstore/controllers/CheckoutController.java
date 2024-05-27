@@ -12,7 +12,7 @@ import java.util.Optional;
 @Controller
 public class CheckoutController {
     private final CartRepository cartRepository;
-    private final User username = new User();
+    private final User username = new User("username");
 
     public CheckoutController(CartRepository cartRepository) {
         this.cartRepository = cartRepository;
