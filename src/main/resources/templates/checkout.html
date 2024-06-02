@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<script>
+    function purshaseBooks(cartId) {
+        fetch('/purshase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'cartId=' + cartId
+        })
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <title>Checkout</title>
@@ -10,10 +26,11 @@
     <p th:text="${book.bookName}"></p>
     <p th:text="${book.author}"></p>
     <p th:text="${book.price}"></p>
+    <button th:onclick="Cart.removeFromCart([[${book.id}]])">Remove from cart</button>
     </div>
 <div>
     <h2>Total price: <span th:text="${totalPrice}"></span></h2>
-    <button th:onclick="Cart.purchaseBooks()">Buy</button>
+    <button onclick="/purshase">Buy all</button>
     <a href="/">Back to Book Store</a>
 </div>
 </body>

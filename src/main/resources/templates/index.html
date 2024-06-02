@@ -4,8 +4,19 @@
   <title>Book Store</title>
   <script>
     function addToCart(bookId) {
-      Cart.addBook(bookId);
-    }
+    fetch('/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'bookId=' + bookId
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
   </script>
 </head>
 <body>
@@ -14,6 +25,7 @@
   <p th:text="${book.bookName}"></p>
   <p th:text="${book.price}"></p>
   <p th:text="${book.genre}"></p>
+  <button onclick="addToCart([[${book.id}]])">Add to cart</button>
 </div>
 <h1>Recommended Books</h1>
 <div th:each="book : ${recommendedBooks}">

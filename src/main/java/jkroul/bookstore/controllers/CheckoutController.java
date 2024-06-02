@@ -6,6 +6,8 @@ import jkroul.bookstore.repositories.CartRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
 
@@ -29,5 +31,19 @@ public class CheckoutController {
         }
 
         return "checkout";
+    }
+
+    @PostMapping("/purchase")
+    @ResponseBody
+    public String purchaseBooks() {
+        Optional<Cart> cartOptional = cartRepository.findById(username.getId());
+        if (cartOptional.isPresent()) {
+            Cart cart = cartOptional.get();
+            cart.purchaseBooks();
+            cartRepository.save(cart);
+            username.addBalance(-cart.updateCartCost());
+            username.addPoints(cart.updateCartCost()/10);
+        }
+        return "Books purchased";
     }
 }
