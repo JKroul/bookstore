@@ -21,15 +21,15 @@
   </script>
 </head>
 <body>
-<h1 style="section">Book List - Test</h1>
-<div style="book" th:each="book : ${books}">
+<h1 class="header" >Book List - Test</h1>
+<div class="book" th:each="book : ${books}">
   <p th:text="${book.bookName}"></p>
   <p th:text="${book.price}"></p>
   <p th:text="${book.genre}"></p>
   <button onclick="addToCart([[${book.id}]])">Add to cart</button>
 </div>
-<h1 style="section">Recommended Books</h1>
-<div style="book" th:each="book : ${recommendedBooks}">
+<h1 class="section">Recommended Books</h1>
+<div class="book" th:each="book : ${recommendedBooks}">
   <p th:text="${book.bookName}"></p>
 </div>
 <div>

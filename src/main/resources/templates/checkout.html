@@ -27,11 +27,11 @@
     <p th:text="${book.bookName}"></p>
     <p th:text="${book.author}"></p>
     <p th:text="${book.price}"></p>
-    <button th:onclick="Cart.removeFromCart([[${book.id}]])">Remove from cart</button>
+    <button th:onclick="Cart.removeFromCart${book.id}">Remove from cart</button>
     </div>
 <div>
     <h2>Total price: <span th:text="${totalPrice}"></span></h2>
-    <button style="bigButton" onclick="/purshase">Buy all</button>
+    <button class="bigButton" onclick="/purshase">Buy all</button>
     <a href="/">Back to Book Store</a>
 </div>
 </body>

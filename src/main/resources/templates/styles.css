@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-    background-color: #333;
+    background-color: #ff6666;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -29,7 +29,7 @@ body {
 }
 
 .bigButton {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -40,3 +40,15 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.bigButton:hover {
+    background-color: #45a049;
+}
+
+.sub-section {
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+

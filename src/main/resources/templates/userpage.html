@@ -6,20 +6,22 @@
     <title>Userpage</title>
 </head>
 <body>
-<h1>Your Userpage</h1>
+<h1 class="section">Your Userpage</h1>
 <div>
-    <h2>Your info</h2>
+    <h2 class="sub-section">Your info</h2>
     <p th:text="${userName}"></p>
     <p th:text="${points}"></p>
 
-    <h2>Your ballance</h2>
+    <h2 class="sub-section">Your ballance</h2>
     <p th:text="${ballance}"></p>
     <form th:action="@{/add-balance}" method="post">
-        <input type="number" name="money">
+        <label>
+            <input type="number" name="money">
+        </label>
         <input type="submit" value="Add money">
     </form>
 
-    <h2>Your points</h2>
+    <h2 class="sub-section">Your points</h2>
     <p th:text="${points}"></p>
     <form th:action="@{/use-points}" method="post">
         <input type="number" name="points">
