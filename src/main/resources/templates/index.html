@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Book Store</title>
   <script>
     function addToCart(bookId) {
@@ -20,15 +21,15 @@
   </script>
 </head>
 <body>
-<h1>Book List - Test</h1>
-<div th:each="book : ${books}">
+<h1 style="section">Book List - Test</h1>
+<div style="book" th:each="book : ${books}">
   <p th:text="${book.bookName}"></p>
   <p th:text="${book.price}"></p>
   <p th:text="${book.genre}"></p>
   <button onclick="addToCart([[${book.id}]])">Add to cart</button>
 </div>
-<h1>Recommended Books</h1>
-<div th:each="book : ${recommendedBooks}">
+<h1 style="section">Recommended Books</h1>
+<div style="book" th:each="book : ${recommendedBooks}">
   <p th:text="${book.bookName}"></p>
 </div>
 <div>

@@ -16,13 +16,14 @@
         });
     }
 </script>
-<head>
+<head class="header">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <title>Checkout</title>
 </head>
 <body>
-<h1>Your books</h1>
-<div th:each="book :${booksInCart}">
+<h1 class="section">Your books</h1>
+<div class="book" th:each="book :${booksInCart}">
     <p th:text="${book.bookName}"></p>
     <p th:text="${book.author}"></p>
     <p th:text="${book.price}"></p>
@@ -30,7 +31,7 @@
     </div>
 <div>
     <h2>Total price: <span th:text="${totalPrice}"></span></h2>
-    <button onclick="/purshase">Buy all</button>
+    <button style="bigButton" onclick="/purshase">Buy all</button>
     <a href="/">Back to Book Store</a>
 </div>
 </body>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <title>Userpage</title>
 </head>
@@ -23,6 +24,7 @@
     <form th:action="@{/use-points}" method="post">
         <input type="number" name="points">
         <input type="submit" value="Use points">
+    </form>
 </div>
 
 </body>

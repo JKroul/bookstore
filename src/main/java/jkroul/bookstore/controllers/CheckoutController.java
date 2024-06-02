@@ -41,7 +41,7 @@ public class CheckoutController {
             Cart cart = cartOptional.get();
             cart.purchaseBooks();
             cartRepository.save(cart);
-            username.addBalance(-cart.updateCartCost());
+            username.subtractBalance((long) cart.updateCartCost());
             username.addPoints(cart.updateCartCost()/10);
         }
         return "Books purchased";

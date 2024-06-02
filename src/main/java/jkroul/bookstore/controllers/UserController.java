@@ -68,3 +68,4 @@ public class UserController {
         return "Points used. New points: " + newPoints;
     }
 }
+

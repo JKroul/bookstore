@@ -72,7 +72,7 @@ private Cart cart;
     }
 
     public void subtractPoints (Double amount) {
-        this.points = this.points - amount;
+        this.points = (long) (this.points - amount);
     }
 
     public Cart getCart() {
