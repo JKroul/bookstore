@@ -13,10 +13,16 @@
 
     <h2>Your ballance</h2>
     <p th:text="${ballance}"></p>
-    <form th:action="@{addBalance}" th:object="${user}" method="post">
+    <form th:action="@{/add-balance}" method="post">
         <input type="number" name="money">
         <input type="submit" value="Add money">
-</form>
+    </form>
+
+    <h2>Your points</h2>
+    <p th:text="${points}"></p>
+    <form th:action="@{/use-points}" method="post">
+        <input type="number" name="points">
+        <input type="submit" value="Use points">
 </div>
 
 </body>

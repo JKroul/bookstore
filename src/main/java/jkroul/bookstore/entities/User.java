@@ -55,8 +55,8 @@ private Cart cart;
         return balance;
     }
 
-    public void addBalance (long amount) {
-        this.balance = this.balance + amount;
+    public void addBalance (Double amount) {
+        this.balance = (long) (this.balance + amount);
     }
 
     public void subtractBalance (long amount) {
@@ -71,7 +71,7 @@ private Cart cart;
         this.points = this.points + amount;
     }
 
-    public void subtractPoints (long amount) {
+    public void subtractPoints (Double amount) {
         this.points = this.points - amount;
     }
 
