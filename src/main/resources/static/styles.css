@@ -9,15 +9,22 @@ body {
     background-color: #ff0015;
     color: #fff;
     text-align: center;
-    height: 30px;
+    height: 60px;
     padding: 10px;
-    margin-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Roboto Slab", serif;
+    font-size: 3em;
+    top: 50%;
+
 }
 
 .menu-text{
     color: white;
     text-decoration: none;
-    font-family: "Roboto Condensed"
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    top: 50%;
 }
 
 .menu {
@@ -26,16 +33,21 @@ body {
     padding: 10px;
     text-align: center;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    left: 25%;
 }
 
 .section {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f4e5;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    width: 30%;
+    padding: 5px;
+    background-color: #ff0015;
     text-align: center;
+    color: white;
+    margin: 10px auto auto auto;
+    font-size:2em;
+    font-family: "Roboto Slab", serif;
 }
 
 .book {
@@ -48,6 +60,31 @@ body {
 .book p {
     margin: 0;
     padding: 0;
+}
+
+.bookName   {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    text-align: center;
+    text-anchor: start;
+}
+
+.bookPrice {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Roboto Condensed", serif;
+    text-align: left;
+    text-anchor: start;
+}
+
+.bookGenre {
+    font-size: 16px;
+    font-style: italic;
+    font-family: "Roboto Condensed", serif;
+    text-align: left;
+    text-anchor: start;
+
 }
 
 .bigButton {
@@ -72,5 +109,18 @@ body {
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+
+.toOtherPage {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 

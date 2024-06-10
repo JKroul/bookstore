@@ -21,27 +21,23 @@
   </script>
 </head>
 <body>
-<h1 class="header">Book Store</h1>
+<h1 class="header">The Book Store</h1>
 <div class="menu">
+  <a class="menu-text" href="/"></a>
   <a class="menu-text" href="/userpage">Userpage</a>
-</div>
-<div class="menu">
   <a class="menu-text" href="/checkout">Checkout</a>
 </div>
 
-<h2 class="section" >Book List - Test</h2>
+<h2 class="section" >Our books</h2>
 <div class="book" th:each="book : ${books}">
-  <p th:text="${book.bookName}"></p>
-  <p th:text="${book.price}"></p>
-  <p th:text="${book.genre}"></p>
+  <p class="bookName" th:text="${book.bookName}"></p>
+  <p class="bookGenre" th:text="${book.genre}"></p>
+  <p class="bookPrice" th:text="${book.price}"></p>
   <button onclick="addToCart([[${book.id}]])">Add to cart</button>
 </div>
-<h2 class="section">Recommended Books</h2>
+<h2 class="section">Books for You</h2>
 <div class="book" th:each="book : ${recommendedBooks}">
-  <p th:text="${book.bookName}"></p>
-</div>
-<div>
-  <a href="/checkout">Checkout</a>
+  <p class="bookName" th:text="${book.bookName}"></p>
 </div>
 </body>
 </html>
