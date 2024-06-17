@@ -4,24 +4,60 @@
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
     <meta charset="UTF-8">
     <title>Userpage</title>
+    <script>
+        function addBallance(userId) {
+            fetch('/add-balance', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'userId=' + userId
+            })
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+        function usePoints(userId) {
+            fetch('/use-points', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'userId=' + userId
+            })
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
 </head>
 <body>
-<h1 class="section">Your Userpage</h1>
-<div>
-    <h2 class="sub-section">Your info</h2>
+<h1 class="header">The Book Store</h1>
+<div class="menu">
+    <a class="menu-text" href="/"></a>
+    <a class="menu-text" href="/userpage">Userpage</a>
+    <a class="menu-text" href="/checkout">Checkout</a>
+</div><div>
+    <h2 class="section">The Userpage</h2>
+
+    <h3 class="sub-section">Your info</h3>
     <p th:text="${userName}"></p>
     <p th:text="${points}"></p>
 
-    <h2 class="sub-section">Your ballance</h2>
+    <h3 class="sub-section">Your ballance</h3>
     <p th:text="${ballance}"></p>
-    <form th:action="@{/add-balance}" method="post">
-        <label>
+    <form th:action="@{/addBalance}" method="post">
+        <label-b
             <input type="number" name="money">
         </label>
         <input type="submit" value="Add money">
     </form>
 
-    <h2 class="sub-section">Your points</h2>
+    <h3 class="sub-section">Your points</h3>
     <p th:text="${points}"></p>
     <form th:action="@{/use-points}" method="post">
         <input type="number" name="points">
