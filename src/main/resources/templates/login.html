@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            fetch('/login-attempt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'username=' + username + '&password=' + password
+            })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'success') {
+                        window.location.href = '/';
+                    } else {
+                        alert('Wrong username or password');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+<h1 class="header">The Book Store</h1>
+<div class="menu">
+    <a class="menu-text" href="/"></a>
+    <a class="menu-text" href="/userpage">Userpage</a>
+    <a class="menu-text" href="/checkout">Checkout</a>
+</div><div>
+    <h2 class="section">Login</h2>
+    <form>
+        <label>
+            <input type="text" id="username" placeholder="Username">
+        </label>
+        <label>
+            <input type="password" id="password" placeholder="Password">
+        </label>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+</div>
+</body>
+</html>

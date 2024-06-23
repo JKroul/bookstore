@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -31,6 +32,27 @@ public class UserController {
         }
         return "userpage";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @PostMapping("/login-attempt")
+    public String loginAttempt(@RequestParam("username") String username, @RequestParam("password") String password) {
+        User userOptional = (User) userRepository.findByUsername(username);
+        if (userOptional != null) {
+            User user = userOptional;
+            if (user.getPassword().equals(password)) {
+                return "redirect:/userpage";
+            } else {
+                return "redirect:/login";
+            }
+        } else {
+            return "redirect:/login";
+        }
+    }
+
     @PostMapping("/add-balance")
     @ResponseBody
     public String addBalance(@RequestParam("money") Double money) {
@@ -68,4 +90,3 @@ public class UserController {
         return "Points used. New points: " + newPoints;
     }
 }
-
