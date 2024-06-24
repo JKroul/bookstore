@@ -35,6 +35,12 @@
   <p class="bookPrice" th:text="${book.price}"></p>
   <button onclick="addToCart([[${book.id}]])">Add to cart</button>
 </div>
+<div class="book" th:each="book : ${books}">
+  <p class="bookName" text="The Great Gatsby"></p>
+  <p class="bookGenre" text="Fiction"></p>
+  <p class="bookPrice" th:text="€10"></p>
+  <button onclick="addToCart([[${book.id}]])">Add to cart</button>
+</div>
 <h2 class="section">Books for You</h2>
 <div class="book" th:each="book : ${recommendedBooks}">
   <p class="bookName" th:text="${book.bookName}"></p>

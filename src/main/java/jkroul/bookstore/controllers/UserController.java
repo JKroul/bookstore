@@ -53,7 +53,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/add-balance")
+    @PostMapping("/addBalance")
     @ResponseBody
     public String addBalance(@RequestParam("money") Double money) {
         Optional<User> userOptional = userRepository.findById(Long.valueOf(1));
@@ -69,7 +69,7 @@ public class UserController {
         return "Balance updated. New balance: " + newBalance;
     }
 
-    @PostMapping("/use-points")
+    @PostMapping("/usePoints")
     @ResponseBody
     public String usePoints(@RequestParam("points") Double points) {
         Optional<User> userOptional = userRepository.findById(Long.valueOf(1));

@@ -123,3 +123,13 @@ body {
     cursor: pointer;
 }
 
+.form{
+    margin: 20px;
+    padding: 10px;
+}
+
+.info{
+margin: 20px;
+    padding: 10px;
+    fond-weight: bold;
+}

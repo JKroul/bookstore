@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
     <meta charset="UTF-8">
     <title>Userpage</title>
     <script>
@@ -45,21 +45,21 @@
     <h2 class="section">The Userpage</h2>
 
     <h3 class="sub-section">Your info</h3>
-    <p th:text="${userName}"></p>
-    <p th:text="${points}"></p>
+    <p class="info" th:text="${userName}"></p>
+    <p class="info" th:text="${points} +  points"></p>
 
     <h3 class="sub-section">Your ballance</h3>
-    <p th:text="${ballance}"></p>
-    <form th:action="@{/addBalance}" method="post">
-        <label-b
+    <p class="info" th:text="${ballance}"></p>
+    <form class="form" th:action="@{/addBalance}" method="post">
+        <label>
             <input type="number" name="money">
         </label>
         <input type="submit" value="Add money">
     </form>
 
     <h3 class="sub-section">Your points</h3>
-    <p th:text="${points}"></p>
-    <form th:action="@{/use-points}" method="post">
+    <p class="info" th:text="${points}"></p>
+    <form class="form" th:action="@{/use-points}" method="post">
         <input type="number" name="points">
         <input type="submit" value="Use points">
     </form>
